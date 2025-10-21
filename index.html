@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Money Frequency Mastery – Registration Form</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 600px;
+      width: 100%;
+      padding: 40px;
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .course-header {
+      text-align: center;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #f0f0f0;
+    }
+
+    .course-icon {
+      font-size: 60px;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 10px;
+      font-size: 28px;
+      line-height: 1.4;
+    }
+
+    .course-price {
+      font-size: 32px;
+      font-weight: 700;
+      color: #667eea;
+      margin: 10px 0;
+    }
+
+    .subtitle {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .info-box {
+      background: #f0f4ff;
+      border-left: 4px solid #667eea;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+
+    .info-box p {
+      color: #555;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    .info-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      color: #555;
+      font-weight: 500;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .required {
+      color: #e74c3c;
+      margin-left: 3px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      background: #fafafa;
+      font-family: inherit;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: #667eea;
+      background: white;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    input::placeholder {
+      color: #999;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    #message {
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 500;
+      display: none;
+    }
+
+    .success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      display: block;
+      animation: slideDown 0.3s ease;
+    }
+
+    .error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+      display: block;
+      animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .form-container {
+        padding: 25px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      .course-price {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <div class="course-header">
+      <div class="course-icon">💰</div>
+      <h2>Money Frequency Mastery</h2>
+      <div class="course-price">₹2,999</div>
+      <p class="subtitle">Transform your relationship with money and unlock abundance</p>
+    </div>
+
+    <div class="info-box">
+      <p><strong>What you'll get:</strong></p>
+      <p>✓ Abundance mindset training</p>
+      <p>✓ Wealth manifestation techniques</p>
+      <p>✓ Financial goal setting strategies</p>
+      <p>✓ Lifetime access to course materials</p>
+    </div>
+    
+    <form id="registerForm">
+      <div class="form-group">
+        <label for="fullName">Full Name<span class="required">*</span></label>
+        <input type="text" id="fullName" placeholder="Enter your full name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" id="age" placeholder="Enter your age" min="1" max="120" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address<span class="required">*</span></label>
+        <input type="email" id="email" placeholder="example@email.com" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number<span class="required">*</span></label>
+        <input type="tel" id="phone" placeholder="Enter your phone number" required />
+      </div>
+
+      <div class="form-group">
+        <label for="cityState">City / State</label>
+        <input type="text" id="cityState" placeholder="Enter your city and state" />
+      </div>
+
+      <div class="form-group">
+        <label for="language">Preferred Language</label>
+        <select id="language">
+          <option value="">Select Language</option>
+          <option value="English">English</option>
+          <option value="Assamese">Assamese</option>
+          <option value="Both English and Assamese">Both English and Assamese</option>
+        </select>
+      </div>
+
+      <button type="submit" id="submitBtn">Complete Registration</button>
+      <div id="message"></div>
+    </form>
+  </div>
+
+  <script>
+    // Replace with your Google Apps Script URL for Money Mastery Course
+    const SHEET_URL = "https://script.google.com/macros/s/AKfycbx82nFC30dCsA6Liw0TNqdwO4Ltj6RPKOSmXKw3F96o6AErKUvEawtpnH8j1jfCP7fe/exec";
+
+    document.getElementById("registerForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const submitBtn = document.getElementById("submitBtn");
+      const data = {
+        courseName: "Money Frequency Mastery",
+        coursePrice: "₹2,999",
+        fullName: document.getElementById("fullName").value.trim(),
+        age: document.getElementById("age").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        phone: document.getElementById("phone").value.trim(),
+        cityState: document.getElementById("cityState").value.trim(),
+        language: document.getElementById("language").value,
+        timestamp: new Date().toLocaleString()
+      };
+
+      const message = document.getElementById("message");
+      message.className = "";
+      message.style.display = "none";
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Submitting...";
+
+      try {
+        const response = await fetch(SHEET_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+
+        message.className = "success";
+        message.innerHTML = "✅ Registration successful! We'll contact you shortly with payment details and course access information. Check your email!";
+        message.style.display = "block";
+        document.getElementById("registerForm").reset();
+      } catch (error) {
+        console.error(error);
+        message.className = "error";
+        message.innerHTML = "❌ Something went wrong. Please try again or contact us directly.";
+        message.style.display = "block";
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Complete Registration";
+      }
+    });
+  </script>
+</body>
+</html>
