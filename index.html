@@ -229,49 +229,50 @@
       <p>✓ Lifetime access to course materials</p>
     </div>
     
-    <form id="registerForm">
-      <div class="form-group">
-        <label for="fullName">Full Name<span class="required">*</span></label>
-        <input type="text" id="fullName" placeholder="Enter your full name" required />
+     
+        <div class="form-group">
+          <label for="fullName">Full Name<span class="required">*</span></label>
+          <input type="text" id="fullName" placeholder="Enter your full name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" id="age" placeholder="Enter your age" min="1" max="120" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address<span class="required">*</span></label>
+          <input type="email" id="email" placeholder="example@email.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number<span class="required">*</span></label>
+          <input type="tel" id="phone" placeholder="Enter your phone number" required />
+        </div>
+
+        <div class="form-group">
+          <label for="cityState">City / State</label>
+          <input type="text" id="cityState" placeholder="Enter your city and state" />
+        </div>
+
+        <div class="form-group">
+          <label for="language">Preferred Language</label>
+          <select id="language">
+            <option value="">Select Language</option>
+            <option value="English">English</option>
+            <option value="Assamese">Assamese</option>
+            <option value="Both English and Assamese">Both English and Assamese</option>
+          </select>
+        </div>
       </div>
 
-      <div class="form-group">
-        <label for="age">Age</label>
-        <input type="number" id="age" placeholder="Enter your age" min="1" max="120" />
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email Address<span class="required">*</span></label>
-        <input type="email" id="email" placeholder="example@email.com" required />
-      </div>
-
-      <div class="form-group">
-        <label for="phone">Phone Number<span class="required">*</span></label>
-        <input type="tel" id="phone" placeholder="Enter your phone number" required />
-      </div>
-
-      <div class="form-group">
-        <label for="cityState">City / State</label>
-        <input type="text" id="cityState" placeholder="Enter your city and state" />
-      </div>
-
-      <div class="form-group">
-        <label for="language">Preferred Language</label>
-        <select id="language">
-          <option value="">Select Language</option>
-          <option value="English">English</option>
-          <option value="Assamese">Assamese</option>
-          <option value="Both English and Assamese">Both English and Assamese</option>
-        </select>
-      </div>
 
       <button type="submit" id="submitBtn">Complete Registration</button>
       <div id="message"></div>
     </form>
   </div>
 
-  <script>
-    // Replace with your Google Apps Script URL for Money Mastery Course
+   <script>
     const SHEET_URL = "https://script.google.com/macros/s/AKfycbx82nFC30dCsA6Liw0TNqdwO4Ltj6RPKOSmXKw3F96o6AErKUvEawtpnH8j1jfCP7fe/exec";
 
     document.getElementById("registerForm").addEventListener("submit", async (e) => {
@@ -285,13 +286,13 @@
         phone: document.getElementById("phone").value.trim(),
         cityState: document.getElementById("cityState").value.trim(),
         language: document.getElementById("language").value,
-        timestamp: new Date().toLocaleString()
       };
 
       const message = document.getElementById("message");
       message.className = "";
       message.style.display = "none";
 
+      // Disable button during submission
       submitBtn.disabled = true;
       submitBtn.textContent = "Submitting...";
 
@@ -304,17 +305,18 @@
         });
 
         message.className = "success";
-        message.innerHTML = "✅ Registration successful! We'll contact you shortly with payment details and course access information. Check your email!";
+        message.innerHTML = "✅ Registration successful! Thank you!";
         message.style.display = "block";
         document.getElementById("registerForm").reset();
       } catch (error) {
         console.error(error);
         message.className = "error";
-        message.innerHTML = "❌ Something went wrong. Please try again or contact us directly.";
+        message.innerHTML = "❌ Something went wrong. Please try again.";
         message.style.display = "block";
       } finally {
+        // Re-enable button
         submitBtn.disabled = false;
-        submitBtn.textContent = "Complete Registration";
+        submitBtn.textContent = "Register Now";
       }
     });
   </script>
