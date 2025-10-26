@@ -363,7 +363,16 @@
 
           const submitBtn = document.getElementById("submitBtn");
           const message = document.getElementById("message");
-
+          const phoneInput = document.getElementById("phone").value.trim();
+      
+            // Validate phone number
+      if (!/^[0-9]{10}$/.test(phoneInput)) {
+        const message = document.getElementById("message");
+        message.className = "error";
+        message.innerHTML = "❌ Please enter a valid 10-digit phone number.";
+        message.style.display = "block";
+        return;
+      }
           const data = {
             fullName: document.getElementById("fullName").value.trim(),
             age: document.getElementById("age").value.trim(),
